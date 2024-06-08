@@ -6,6 +6,7 @@ import com.example.model.util.fic.Fichero;
 import com.example.model.util.fic.FicheroBinario;
 
 public class ImpresoraParaImprimir {
+    
     public static void imprimir(Documento documento, DocumentoFormato df) throws Exception{
 
         Impresora impresora = DocumentoFactory.obtener(df); 

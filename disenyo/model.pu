@@ -14,7 +14,7 @@ interface Documento{
     + getPie(): String
 }
 
-interface Impresora{
+interface Imprimible{
     + imiprimir(documento: Documento): byte[]
 }
 
@@ -38,10 +38,16 @@ class ImpresoraPDF{
 
 }
 
+class ImpresoraParaImprimir{
+    + {static} imprimir(documento: Documento, df: DocumentoFormato): void
+}
+
 Objeto ..|> Documento
 
 Impresora <|.. ImpresoraAbs
 ImpresoraAbs <|-- ImpresoraTXT
 ImpresoraAbs <|-- ImpresoraMarkdown
 ImpresoraAbs <|-- ImpresoraPDF
+
+ImpresoraParaImprimir ..> FicheroBinario
 @enduml
