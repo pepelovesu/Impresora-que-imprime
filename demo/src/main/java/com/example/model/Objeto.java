@@ -45,11 +45,5 @@ public class Objeto implements Documento{
     public String getPie() {
         return "Pie con atributo2: " + atributo2;
     }
-
-    @Override
-    public String getContenido() {
-        String plantilla = "";
-        return plantilla;
-    }
     
 }
