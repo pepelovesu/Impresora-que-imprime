@@ -1,0 +1,47 @@
+@startuml diagrama de clases
+
+class Objeto{
+
+}
+
+class DocumentoFormato{
+    TXT, MARKDOWN, PDF
+}
+
+interface Documento{
+    + getTitulo(): String
+    + getCuerpo(): String
+    + getPie(): String
+}
+
+interface Impresora{
+    + imiprimir(documento: Documento): byte[]
+}
+
+class DocumentoFactory{
+    + obtener(formato: DocumentoFormaro):Impresora
+}
+
+abstract class ImpresoraAbs{
+
+}
+
+class ImpresoraTXT{
+
+}
+
+class ImpresoraMarkdown{
+
+}
+
+class ImpresoraPDF{
+
+}
+
+Objeto ..|> Documento
+
+Impresora <|.. ImpresoraAbs
+ImpresoraAbs <|-- ImpresoraTXT
+ImpresoraAbs <|-- ImpresoraMarkdown
+ImpresoraAbs <|-- ImpresoraPDF
+@enduml
